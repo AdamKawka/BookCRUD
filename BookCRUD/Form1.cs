@@ -28,6 +28,7 @@ namespace BookCRUD
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
+                //otwieramy polaczenie z bazą, brak obsługi wyjątku w postaci wyłączonej/niedostępnej bazy
                 mysqlCon.Open();
                 MySqlDataAdapter sqlDa = new MySqlDataAdapter("book_search_by_value", mysqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
